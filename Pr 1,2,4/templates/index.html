@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .form-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 520px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a4a8a;
+            margin-bottom: 8px;
+            font-size: 26px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 28px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333;
+            transition: border 0.3s;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 6px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 400;
+            color: #444;
+            cursor: pointer;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            accent-color: #667eea;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        .btn-reset {
+            width: 100%;
+            padding: 10px;
+            background: #f0f0f0;
+            color: #555;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.3s;
+        }
+
+        .btn-reset:hover {
+            background: #e0e0e0;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>📋 Registration Form</h1>
+        <p class="subtitle">Fill in the details below to register</p>
+
+        <form id="registrationForm">
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password">
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <!-- Gender (Radio) -->
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Country (Combo Box) -->
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="">-- Select Country --</option>
+                    <option value="india">India</option>
+                    <option value="usa">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="canada">Canada</option>
+                    <option value="australia">Australia</option>
+                    <option value="germany">Germany</option>
+                    <option value="france">France</option>
+                    <option value="japan">Japan</option>
+                </select>
+            </div>
+
+            <!-- Course (Combo Box) -->
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" name="course">
+                    <option value="">-- Select Course --</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="mtech">M.Tech</option>
+                    <option value="bsc">B.Sc</option>
+                    <option value="msc">M.Sc</option>
+                    <option value="mba">MBA</option>
+                    <option value="phd">PhD</option>
+                </select>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Interests (Checkboxes) -->
+            <div class="form-group">
+                <label>Interests</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="interests" value="coding"> Coding</label>
+                    <label><input type="checkbox" name="interests" value="design"> Design</label>
+                    <label><input type="checkbox" name="interests" value="data"> Data Science</label>
+                    <label><input type="checkbox" name="interests" value="ai"> AI / ML</label>
+                    <label><input type="checkbox" name="interests" value="cloud"> Cloud</label>
+                    <label><input type="checkbox" name="interests" value="security"> Cybersecurity</label>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+            </div>
+
+            <!-- Terms (Checkbox) -->
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="terms" value="agree"> I agree to the Terms & Conditions</label>
+                </div>
+            </div>
+
+            <!-- Test Dropdowns for 10.py -->
+            <div class="form-group">
+                <label for="dropdown-pass">Test Dropdown (Pass)</label>
+                <select id="dropdown-pass" name="dropdown-pass">
+                    <option value="opt1">Option 1</option>
+                    <option value="opt2">Option 2</option>
+                    <option value="opt3">Option 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dropdown-fail">Test Dropdown (Fail)</label>
+                <select id="dropdown-fail" name="dropdown-fail">
+                </select>
+            </div>
+
+            <!-- Buttons -->
+            <button type="submit" class="btn-submit">Register</button>
+            <button type="reset" class="btn-reset">Reset Form</button>
+
+        </form>
+    </div>
+</body>
+</html>
